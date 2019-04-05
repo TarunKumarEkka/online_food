@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<style>
+        #we1
+        {
+            text-align:left;
+            margin-left:-10px;
+        }
+        #we2
+        {
+            text-align:right;
+            margin-top: -38px;
+            margin-right:-10px;
+        }
+    	#fgh1
+    	{
+    		width:33%;
+    		border-top:6px solid #DED9D9;
+			position:relative;
+			float:left;
+    	}
+        #fgh2
+        {
+            width:33%;
+            border-top:6px solid #DED9D9;
+            position:relative;
+            float:left;
+        }
+        #fgh3
+        {
+            width:33%;
+            border-top:6px solid #DED9D9;
+            position:relative;
+            float:left;
+        }
+		#kj{
+            margin-top: 50px;
+            margin-left: 20px;
+		width:50%;
+		height:100px;
+		}
+		#hj1{
+		border:8px solid #DED9D9;
+		width:8px;
+        height:8px;
+        margin-top:-14px;
+        border-radius:50%;
+		background:#DED9D9;
+        transition:border 1s;
+		}
+        #hj2{
+        border:8px solid #DED9D9;
+        width:8px;
+        height:8px;
+        margin-top:-14px;
+        border-radius:50%;
+        background:#DED9D9;
+        transition:border 1s;
+        }
+        #hj3{
+        border:8px solid #DED9D9;
+        width:8px;
+        height:8px;
+        margin-top:-14px;
+        border-radius:50%;
+        background:#DED9D9;
+        transition:border 1s;
+        }
+        #hj1:hover,#hj2:hover,#hj3:hover,#hjk:hover
+        {
+            border:9px solid #DED9D9;
+        }
+		#hjk{
+		border:8px solid #DED9D9;
+		width:8px;
+        height:8px;
+        margin-top:-25px;
+        border-radius:50%;
+		background:#DED9D9;
+		float:right;
+		}
+        #kll
+        {
+            width:33%;
+            position:relative;
+            float:left;
+        }
+    	</style>
+	</head>
+	<script>
+        window.onload=my;
+		function OnMouseIn (elem) {
+            elem.style.border = "9px solid #0000FF";
+        }
+        function OnMouseOut (elem) {
+            elem.style.border = "8px solid #0000FF";
+        }
+        function my()
+        {
+  document.getElementById("hj1").style.border = "8px solid #0000FF";
+   document.getElementById("hj1").style.background = "#0000FF";
+
+        }
+    </script>
+    <body>
+    	<div id="kj">
+            <div id="kll"><h4 id="we1">ordered</h4></div>
+            <div id="kll"> <h4 id="we1">packed</h4></div>
+           
+            <div id="kll">    <h4 id="we1">on route</h4><h4 id="we2">delivered</h4></div>
+    		<div id="fgh1">
+			<div id="hj1"  onmouseover="OnMouseIn (this)" onmouseout="OnMouseOut (this)">
+			</div>
+    		</div>
+    		<div id="fgh2">
+    		<div id="hj2">
+			</div>	
+    		</div>
+    		<div id="fgh3">
+			<div id="hj3">
+			</div>
+			<div id="hjk">
+			</div>
+    		</div>
+			
+    	</div>
+         
+	</body>
+</html>

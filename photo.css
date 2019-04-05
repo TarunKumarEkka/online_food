@@ -1,0 +1,117 @@
+.zx
+{
+  float:left;
+}
+ul{
+  list-style:none;
+}
+.zx ul li{
+  list-style:none;
+  display:none;
+  width:100px;
+  height:30px;
+  margin-left:-50px;
+}
+.zx:hover.zx ul li
+{
+  display:block;
+}
+ .aboutus,.containers{
+  overflow:hidden;
+  width:98%;
+  background:black;
+  margin:10px;
+  padding:10px 0px;
+  margin-right:5px;
+  }
+  .ts
+  {
+    background:white;color:black;
+    font-size:1.1em;text-decoration:underline;
+    margin-left:auto;margin-right:auto;
+    height:60px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .aboutus,.containers ul
+  {
+  padding:0px;
+  margin:0px;
+  }
+  .containers ul li
+  {
+    display: block;
+  list-style:none;
+  float:left;
+  width:23%;
+  margin:10px 10px 0px 10px;
+  background:white;
+  box-sizing:border-box;
+  }
+  .aboutus ul li img:hover {opacity: 0.7;}
+  .containers ul li img:hover {opacity: 0.7;}
+
+  .containers ul li img
+  {
+  display:block;
+  height:300px;
+  margin-left:auto;
+  margin-right:auto;
+  }
+  .aboutus ul li img
+  {
+  display:block;
+  height:200px;
+  margin-left:auto;
+  margin-right:auto;
+  z-index:-1;
+  }
+  .aboutus ul li
+  {
+  list-style:none;
+  float:left;
+  width:30%;
+  margin:10px 10px 0px 10px;
+  background:white;
+  box-sizing:border-box;
+  }
+
+  .gallery-uploads
+  {
+    display:block;
+    width:30%;
+    background:grey;
+    margin:0 auto;
+    padding:10px;
+  }
+  .gallery-uploads div h3
+  {
+    font-family: cursive;
+    font-size:20px;
+    color:White;
+    background-color:black;
+    line-height:3em;
+    text-align: center;
+    text-shadow: 4px 4px grey;
+
+  }input[type="text"]
+  {
+    width:100%;
+     padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  }
+  input[type="text"]:hover
+  {
+    opacity: .7;
+    
+  }
+  .gallery-uploads div h3:hover
+  {
+      opacity: .7;
+  }
+  

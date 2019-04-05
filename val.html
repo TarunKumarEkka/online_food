@@ -1,0 +1,50 @@
+<!doctype.html>
+<html>
+<head>
+<title>Sign up</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <script >
+  function validate()
+{var result =true;
+  var email=document.getElementsByName("email")[0].value;
+  var pass=document.getElementsByName("password")[0].value;
+  var key=document.getElementsByName("cpassword")[0].value;
+  var mob=document.getElementByName("mobileno").value;
+  var atindex=email.indexOf('@');
+  var dotindex=email.lastindexOf('.');
+  if(atindex<1 || dotindex >email.length-2||dotindex-atindex<3)
+  {
+  result=false;
+  }
+  if(key!=pass)
+  {
+    result =false;
+  }
+    return(result);
+}
+</script>
+<div class="ds">
+<div  id="fgf">
+<form method="post"onsubmit="validate()"action="add.php">
+<table >
+<div ><h3 ><a>USER Sign up</a></h3>
+<div class="dff">
+<div ><tr><td><a>Name:</a></td></tr><tr><td ><input type="text" name="name"placeholder="name"name="name"required></td></tr></div>
+<div ><tr><td><a>email:</a></td></tr><tr><td ><input type="email" name="email"placeholder="example@gmail.com"name="email"required></td></tr></div>
+<div ><tr><td><a>Mobile No.</a>:+91</td></tr><tr><td><input type="number" placeholder="0123456789"name="mobileno"style="width:100%"required size="10"></td></tr></div>
+<div ><tr><td><a>Username:</a></td></tr><tr><td ><input type="text" placeholder="username"name="username"required ></td></tr></div>
+<div ><tr><td><a>Password:</a></td></tr><tr><td ><input type="password"placeholder="password" name="password"style="width:100%"required></td></tr></div>
+<div ><tr><td><a>Re-Password:</a></td></tr><tr><td ><input type="password"placeholder="**********"name="cpassword"style="width:100%"required></td></tr></div>
+<div ><tr><td><input type="submit"></td></tr></div>
+</table>
+</tr></td>
+</form>
+</div>
+<h3 ><p><a class="fs" href="food login.php" style="text-align:center;">Already a member sign here</a></p></h3>
+</div>
+</body>
+</html>
