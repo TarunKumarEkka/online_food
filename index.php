@@ -1,4 +1,5 @@
 <?php
+session_start();
 $con=mysqli_connect('localhost','root','','online_food');
 if(!$con)
 {
@@ -22,7 +23,7 @@ $result = $con->query($sql);
 <section>
   <div class="cbar">
   <ul>
-  <li><a class="ac" href="#home">Category</a></li>
+  <li><a class="ac" href="index.php">Category</a></li>
   <li><a href="#news">Breakfast</a></li>
   <li><a href="#contact">BBQ</a></li>
   <li><a href="#about">Chinese</a></li>

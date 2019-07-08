@@ -46,14 +46,14 @@ $result2=$con->query($se);
 </section><div style="display:block;width:80%;margin-left:15%;"class="he">
   <a href="#default" class="lo">Food online</a>
   <div class="he-rig">
-    <li><a class="ac" href="#home">Home</a></li>
+    <li><a class="ac" href="welcome.php">Home</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
 <?php
 if(isset($_SESSION["user"]))
 {
 	echo'<li><a class="acd">'.$_SESSION["user"].'</a>
-    	<ul><li><a href="#">Profile</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>';
+    	<ul><li><a href="profile.php">orders</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>';
 }
 else
 {
@@ -65,14 +65,16 @@ else
 <div style="display:block;width:80%;margin-left:18%;margin-top:3%;background:blue"><h2 style="text-align:center"> <span class="well"style="display:block width:50%">cart</span></h2><a style="margin-left:90%"> <span   data-toggle="collapse" data-target="#demo"class=" btn btn-default glyphicon glyphicon-triangle-bottom"></span></h2></a></div>
 <div style="display:block;width:80%;margin-left:18%;" id="demo"class="table-responsive-md containers collapse">
 <table id="as">
-	<div ><tr><th ><a>Date</a></th><th><a>Dishes:</a></th><th ><a>prices</a></th><th ><a>quantity</a></th><th>Amount</th><th>X</th></tr></div>
+	<div ><tr><th ><a>s.no</a></th><th><a>Dishes:</a></th><th ><a>prices</a></th><th ><a>quantity</a></th><th>Amount</th><th>X</th></tr></div>
 	<?php $am=0; if ($result2->num_rows > 0)
+		$ty=1;
     while($row2 = $result2->fetch_assoc()) 
 	{
 ?>
-	<?php $am=$am+$row2['quantity']*$row2['amount'];echo "<div ><tr><td><a>".$row2['Date']."</a></td><td><a>".$row2['item_name']."</a></td><td><a>".$row2['amount']." RS</a></td><td><a><form method='post'action='addcart.php'>
+	<?php $am=$am+$row2['quantity']*$row2['amount'];echo "<div ><tr><td><a>".$ty."</a></td><td><a>".$row2['item_name']."</a></td><td><a>".$row2['amount']." RS</a></td><td><a><form method='post'action='addcart.php'>
   <input type='number' name='quantity' min='1' max='5' value='".$row2['quantity']."'><input type='hidden'name='item'value='".$row2['item_name']."'/><input type='submit'name='button1'id='button'value='y'/>
-</form></a></td><td><a>".$row2['quantity']*$row2['amount']." RS</a></td><td>";?><form method="post"action="addcart.php">
+</form></a></td><td><a>".$row2['quantity']*$row2['amount']." RS</a></td><td>";
+$ty=$ty+1;?><form method="post"action="addcart.php">
 	                                                                                                  <input type="hidden"name="item"value="<?php echo$row2['item_name'];?>"/>
 																									  <input type="submit"name="butt"value="X"/></form></td></tr></div>
   <?php
@@ -81,7 +83,9 @@ else
 
 
 </table>
-<div id="rt"><a id="ap"> checkout <?php echo 'Grand amount '.$am.'';?></a></div>
+<div id="rt"><a style="color:blue"id="ap" ><form method="post"action="checkout.php">
+	          <input type="hidden"name="amount"value="<?php echo $am;?>"/>
+			<input type="submit"name="butt"value="checkout"/></form></td></tr></div> checkout <?php echo 'Grand amount '.$am.'';?></a></div>
 </div>
 </div>
 <div style="display:block;width:80%;margin-left:18%;margin-top:9%;background:blue"><h2 style="text-align:center"> <span class="well"style="display:block width:50%">Menu</span></h2><a style="margin-left:90%"> <span   data-toggle="collapse" data-target="#demo"class=" btn btn-default glyphicon glyphicon-triangle-bottom"></span></h2></a></div>

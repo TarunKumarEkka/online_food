@@ -46,11 +46,11 @@ $result = $con->query($sql);
 </section><div style="display:block;width:80%;margin-left:15%;"class="he">
   <a href="#default" class="lo">Food online</a>
   <div class="he-rig">
-    <li><a class="ac" href="#home">Home</a></li>
+    <li><a class="ac" href="welcome.php">Home</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
     <li><a class="acd"><?php echo $_SESSION["user"]?></a>
-    	<ul><li><a href="#">Profile</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>
+    	<ul><li><a href="profile.php">Orders</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>
 </div>
 </div>
 
@@ -126,11 +126,11 @@ $result = $con->query($sql);
 	<div ><tr><th><a>Dishes:</a></th><th ><a>prices</a></th><th></th></tr></div>
 
 <?php if ($result->num_rows > 0)
-    while($row = $result->fetch_assoc()) 
+    while($row1 = $result->fetch_assoc()) 
 	{
 ?>
-	<?php echo "<div ><tr><td><a>".$row['item']."</a></td><td><a>".$row['price']." RS</a></td><td>";?><form id="form1"name="form1"method="post"action="cart.php">
-	                                                                                                  <input type="hidden"name="pid"id="pid"value="<?php echo$row['ID'];?>"/>
+	<?php echo "<div ><tr><td><a>".$row1['item']."</a></td><td><a>".$row1['price']." RS</a></td><td>";?><form id="form1"name="form1"method="post"action="addcart.php">
+	                                                                                                  <input type="hidden"name="pid"id="pid"value="<?php echo$row1['ID'];?>"/>
 																									  <input type="submit"name="button"id="button"value="add"/></form></td></tr></div>
   <?php
 }

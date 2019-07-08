@@ -11,10 +11,14 @@ if(isset($_POST["login"]))
 	{
 	$q="select * from customer where username='".($_POST["username"])."' and password='".($_POST["password"])."'";
 	$result=mysqli_query($con,$q);
-	     if(mysqli_fetch_assoc($result))
+	     if($row =mysqli_fetch_assoc($result))
 	    {
 	       $_SESSION["user"]=$_POST["username"];
 		   $_SESSION["key"]=$_POST["password"];
+    $_SESSION["c_id"]=$row["customer_id"];
+	    $_SESSION["name"]=$row["customer_name"];
+	
+		  
 	        header("location:welcome.php");
 	     }
 		 else

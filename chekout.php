@@ -33,18 +33,6 @@ if ($result->num_rows > 0)
 }
 ?>
 <?php
-
-if(isset($_POST["button1"]))
-{
-	$rt="UPDATE cart SET quantity='".($_POST["quantity"])."' WHERE item_name='".($_POST["item"])."'";
-	$con->query($rt);
-}
-if(isset($_POST["butt"]))
-{
-	$rt="DELETE FROM `cart` WHERE item_name='".($_POST["item"])."'";
-	$con->query($rt);
-}
-?>
 <?php
 header("location:cart.php");
 ?>

@@ -6,6 +6,8 @@ else
 {
 	header("location:food login.php");
 }
+$_SESSION["amount"]=$_POST["amount"];
+
 ?>
 <?php
 $con=mysqli_connect('localhost','root','','online_food');
@@ -131,7 +133,7 @@ span.price {
 <section>
   <div class="cbar">
   <ul>
-  <li><a class="ac" href="#home">Category</a></li>
+  <li><a class="ac" href="welcome.php">Category</a></li>
   <li><a href="#news">Breakfast</a></li>
   <li><a href="#contact">BBQ</a></li>
   <li><a href="#about">Chinese</a></li>
@@ -146,17 +148,17 @@ span.price {
 </section><div style="display:block;width:80%;margin-left:15%;"class="he">
   <a href="#default" class="lo">Food online</a>
   <div class="he-rig">
-    <li><a class="ac" href="#home">Home</a></li>
+    <li><a class="ac" href="welcome.php">Home</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
     <li><a class="acd"><?php echo $_SESSION["user"]?></a>
-    	<ul><li><a href="#">Profile</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>
+    	<ul><li><a href="profile.php">Orders</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>
 </div>
 </div>
 <div class="rwty" style="width:35%;margin-left:35%;margin-right:25%;margin-top:3%;">
   <div class="clli7">
     <div class="kner">
-      <form action="/action_page.php">
+      <form action="wallet.php"method="post">
           <div class="clli5">
             <button ><h3>Payment</h3></button>
             <label for="fname">Accepted Cards</label>
@@ -166,10 +168,12 @@ span.price {
               <i class="fa fa-cc-mastercard" style="color:red;"></i>
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname"required name="cardname" placeholder="John More Doe">
+			
+            <label for="cname">Address</label>
+			 <input type="hidden" name="payment"value="wallet">
+            <input type="text" id="cname"required name="address" placeholder="Address">
             <label for="ccnum">Credit card number</label>
-            <input type="number" id="ccnum"required name="cardnumber"min="11111111111111" placeholder="1111-2222-3333-4444">
+            <input type="number" id="ccnum"required name="number"min="11111111111111" placeholder="1111-2222-3333-4444">
             <label for="expmonth">Exp Month</label>
             <input type="number" id="expmonth"required name="expmonth"min="1"max="12" placeholder="September">
             <div class="rwty">
@@ -188,7 +192,7 @@ span.price {
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout"id="bb" class="btn">
+        <button type="submit" name="wallet"id="bb" class="btn"><?php echo $_SESSION["amount"];?>  Continue to checkout</button>
       </form>
     </div>
   </div>
