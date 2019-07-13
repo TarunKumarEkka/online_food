@@ -139,6 +139,9 @@ $p = $con->query($ii);
 	
 </div>
 </div>
+<div class="footer">
+  <p>@Ekka</p>
+</div>
 
 </body>
 </html>

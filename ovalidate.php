@@ -14,7 +14,7 @@ if(isset($_POST["login"]))
 	     if(mysqli_fetch_assoc($result))
 	    {
 	       $_SESSION["owner"]=$_POST["username"];
-	        header("location:val.html");
+	        header("location:admin.php");
 	     }
 		 else
 		 {

@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION["user"])){
+if(isset($_SESSION["owner"])){
 }
 else
 {
-	header("location:food login.php");
+	header("location:Ownerlogin.php");
 }
 ?>
 <?php
@@ -49,8 +49,8 @@ $result = $con->query($sql);
     <li><a class="ac" href="welcome.php">Home</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
-    <li><a class="acd"><?php echo $_SESSION["user"]?></a>
-    	<ul><li><a href="profile.php">Orders</a></li><li><a href="logout.php?logout">Logout</a></li></li></ul>
+    <li><a class="acd"><?php echo $_SESSION["owner"]?></a>
+    	<ul><li><a href="logout.php?logout">Logout</a></li></li></ul>
 </div>
 </div>
 
@@ -121,22 +121,22 @@ $result = $con->query($sql);
   </div>
 </div>
 <div style="display:block;width:80%;margin-left:18%;margin-top:9%;background:blue"><h2 style="text-align:center"> <span class="well"style="display:block width:50%">Menu</span></h2><a style="margin-left:90%"> <span   data-toggle="collapse" data-target="#demo"class=" btn btn-default glyphicon glyphicon-triangle-bottom"></span></h2></a></div>
-<div style="width:80%;margin-left:18%;" id="demo"class="table-responsive-md containers collapse">
+<div style="display:block;width:80%;margin-left:18%;" id="demo"class="table-responsive-md containers collapse">
 <table id="as">
-	<div ><tr><th><a>Dishes:</a></th><th ><a>prices</a></th><th></th></tr></div>
+	<div ><tr><th><a>Dishes:</a></th><th ><a>prices</a></th><th ><a>update</a></th></tr></div>
 
 <?php if ($result->num_rows > 0)
     while($row1 = $result->fetch_assoc()) 
 	{
 ?>
-	<?php echo "<div ><tr><td><a>".$row1['item']."</a></td><td><a>".$row1['price']." RS</a></td><td>";?><form id="form1"name="form1"method="post"action="addcart.php">
+	<?php echo "<div ><tr><td><a>".$row1['item']."</a></td><td><a>".$row1['price']." RS</a></td><td>";?><form id="form1"name="form1"method="post"action="update.php">
 	                                                                                                  <input type="hidden"name="pid"id="pid"value="<?php echo$row1['ID'];?>"/>
-																									  <input type="submit"name="button"id="button"value="add"/></form></td></tr></div>
+																									  <input type="number"name="np"id="np"/>
+																									  <input type="submit"name="but"id="but"value="update"/></form></td></tr></div>
   <?php
 }
 	?>
 </table>
-<div id="rt"><a id="ap">checkout (Go to cart)</a></div>
 </div>
 </div>
 <div class="footer">

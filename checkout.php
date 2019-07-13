@@ -196,8 +196,9 @@ span.price {
       </form>
     </div>
   </div>
-<script>
+<div class="footer">
+  <p>@Ekka</p>
+</div>
 
-</script>
 </body>
 </html>

@@ -131,5 +131,9 @@ $result = $con->query($sql);
 <div id="rt"><a id="ap">checkout (Go to cart)</a></div>
 </div>
 </div>
+<div class="footer">
+  <p>@Ekka</p>
+</div>
+
 </body>
 </html>

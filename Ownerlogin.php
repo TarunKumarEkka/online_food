@@ -40,7 +40,6 @@ if((@$_GET["Invalid"])==true)
 </tr></td>
 </form>
 </div>
-<h3 ><p><a class="fs" href="val.html" style="text-align:center;">Not  a member sign up here</a></p></h3>
 </div>
 </body>
 </html></body>
